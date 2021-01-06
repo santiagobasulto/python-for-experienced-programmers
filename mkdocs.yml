@@ -2,10 +2,19 @@ docs_dir: book
 site_name: Python for experienced programmers
 theme:
     name: material
+    palette:
+        scheme: default
+        primary: blue grey
+        accent: teal
 nav:
     - "1. Introduction": 'index.md'
     - "2. Meta": 'meta.md'
-    - "3. Data Types": 'data-types.md'
+    - "3. Language Basics": 'basics.md'
+    - "4. Data Types": 'data-types.md'
+    - "5. Magic Methods": 'magic_methods.md'
+
+extra_css:
+    - static/css/extra.css
 
 markdown_extensions:
     - admonition
