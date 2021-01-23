@@ -1,0 +1,720 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
+    
+    
+      
+        <title>3. Language Basics - Python for experienced programmers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../static/css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#language-basics" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Python for experienced programmers" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Python for experienced programmers
+            </span>
+            <span class="md-header-nav__topic">
+              
+                3. Language Basics
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Python for experienced programmers" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Python for experienced programmers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="1. Introduction" class="md-nav__link">
+      1. Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../meta/" title="2. Meta" class="md-nav__link">
+      2. Meta
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3. Language Basics
+      </label>
+    
+    <a href="./" title="3. Language Basics" class="md-nav__link md-nav__link--active">
+      3. Language Basics
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indentation" class="md-nav__link">
+    Indentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs-vs-spaces-code-formatting" class="md-nav__link">
+    Tabs vs spaces: code formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-program-evaluation" class="md-nav__link">
+    Python program evaluation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-and-names" class="md-nav__link">
+    Variables and names
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-unpacking" class="md-nav__link">
+    Variable Unpacking
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-identity" class="md-nav__link">
+    Object identity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-is-operator" class="md-nav__link">
+    The is operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-bytecode" class="md-nav__link">
+    Python Bytecode
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../control_flow/" title="4. Control Flow" class="md-nav__link">
+      4. Control Flow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../data-types/" title="5. Data Types" class="md-nav__link">
+      5. Data Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../magic_methods/" title="6. Magic Methods" class="md-nav__link">
+      6. Magic Methods
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indentation" class="md-nav__link">
+    Indentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs-vs-spaces-code-formatting" class="md-nav__link">
+    Tabs vs spaces: code formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-program-evaluation" class="md-nav__link">
+    Python program evaluation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-and-names" class="md-nav__link">
+    Variables and names
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-unpacking" class="md-nav__link">
+    Variable Unpacking
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-identity" class="md-nav__link">
+    Object identity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-is-operator" class="md-nav__link">
+    The is operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-bytecode" class="md-nav__link">
+    Python Bytecode
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="language-basics">Language Basics<a class="headerlink" href="#language-basics" title="Permanent link">&para;</a></h1>
+<p>Python is a very intuitive language. Let's do a quick summary of all the basics to get you started.</p>
+<h2 id="indentation">Indentation<a class="headerlink" href="#indentation" title="Permanent link">&para;</a></h2>
+<p>Python uses indentation to define blocks, and each "level" of indentation is separated by the colon sing (<code>:</code>). An example explains it better:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">send_email</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">EmailException</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;An error occurred&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Skipping, inactive user&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>There's an amusing easter egg built into the language involving braces:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">braces</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">chance</span>
+</pre></div>
+
+
+<p>Each statement in Python is determined with a new line, as you can see from the example above. Optionally, you can use a semicolon (<code>;</code>) to separate multiple statements in the same line, but this is rarely used:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">random</span><span class="p">;</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+<span class="mi">30</span>
+</pre></div>
+
+
+<h2 id="tabs-vs-spaces-code-formatting">Tabs vs spaces: code formatting<a class="headerlink" href="#tabs-vs-spaces-code-formatting" title="Permanent link">&para;</a></h2>
+<p>Do NOT use tabs. Use 4 spaces for indentation level. It's recommended by <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> and it's a standard in the industry. Make sure you set your editor with the right configuration.</p>
+<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
+<p>Python has only one type of comment, a single-line comment. To create a comment, preface the line with the pound character (<code>#</code>). Example:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># This is a comment</span>
+<span class="c1"># This too</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This # is not#&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Comments are stripped out in the process of interpretation (when the interpreter compiles the source into bytecode) so it's totally safe to add as many comments as you want (sorry, you can't use "size" as an excuse not to comment your code).</p>
+<p>There are no multi-line comments in Python. There's a hack though, an alternative "solution", which involves using multiline strings (a pair of triple quotes <code>"""</code> or <code>'''</code>):</p>
+<div class="codehilite"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This code</span>
+<span class="sd">has no effect</span>
+
+<span class="sd">1/0 doesn&#39;t break for example</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+
+<p>But again, these are not actual comments and they'll be evaluated by your Python interpreter. They might have unintended consequences in some situations (like in function docs) and they just don't look like comments. Your editor should include a simple way to comment/uncomment pieces of code using the pound char <code>#</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Try to avoid multi-line strings as comments. Instead, put some time in configuring your editor to comment out block of codes using a simple key combination, like <code>cmd + /</code>.</p>
+</div>
+<h2 id="python-program-evaluation">Python program evaluation<a class="headerlink" href="#python-program-evaluation" title="Permanent link">&para;</a></h2>
+<p>Python parses a program from top to bottom, and processes definitions as it finds them. This might have some unintended consequences. For example, the following code will raise an exception:</p>
+<div class="codehilite"><pre><span></span><span class="n">say_hello</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The exception is a <code>NameError</code>, as we're trying to invoke a function <code>say_hello</code> and it doesn't exit (yet). It will <em>start existing</em> once the function block is evaluated.</p>
+<h2 id="variables-and-names">Variables and names<a class="headerlink" href="#variables-and-names" title="Permanent link">&para;</a></h2>
+<p>Variables are set by just assigning them to a value, there's no need to "declare" them. Assignment is performed with the equals sign (<code>=</code>).</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;String&quot;</span>
+<span class="n">email</span> <span class="o">=</span> <span class="s1">&#39;hello@example.com&#39;</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There's no difference between single and double quoted strings. See the chapter about strings for more.</p>
+</div>
+<p>Variable names don't have a length restriction. Valid characters are uppercase and lowercase letters (<code>A-Z</code>, <code>a-z</code>), digits (<code>0-9</code>), and the underscore character (<code>_</code>). Although digits can't be at the start of the variable name: <code>99name</code> is invalid and <code>_99name</code> is valid.</p>
+<p>You can delete a variable using the <code>del</code> keyword, but this doesn't mean the underlying value is deleted and the memory is free. Remember Python's Garbage Collector and reference counting:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">pass</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Car</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x10fc52850</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
+<span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Car</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x10fc52850</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
+<span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Car</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x10fc52850</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;x&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+
+
+<h3 id="variable-unpacking">Variable Unpacking<a class="headerlink" href="#variable-unpacking" title="Permanent link">&para;</a></h3>
+<p>Whenever you</p>
+<h2 id="object-identity">Object identity<a class="headerlink" href="#object-identity" title="Permanent link">&para;</a></h2>
+<p>In our previous example you'll see a hex number associated with the <code>Car</code> object. In Python, each object created has a unique identifier that you can check with the <code>id</code> function:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">4363573440</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="mi">4368164144</span>
+</pre></div>
+
+
+<p>By checking IDs you'll find out that some objects in python are "interned", or cached for simplicity. This is evident for integers:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">4363573440</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="mi">4363573440</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="mi">4363573440</span>
+</pre></div>
+
+
+<p>This means that there's only 1 instance of the object <code>1</code> created and it's always reused. It happens the same thing for strings:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="mi">4368226800</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="mi">4368226800</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="mi">4368226800</span>
+</pre></div>
+
+
+<p>But you should <strong>be careful</strong> with object interning, because it's <strong>interpreter dependant</strong> (I have tried this only in CPython 3.8) and it's just done for a handful of objects. For example, for integers, it only applies for integers between <code>-5</code> and <code>256</code>. From the <a href="https://docs.python.org/3/c-api/long.html">C-API docs</a>:</p>
+<blockquote>
+<p>The current implementation keeps an array of integer objects for all integers between -5 and 256, when you create an int in that range you actually just get back a reference to the existing object. So it should be possible to change the value of 1. I suspect the behaviour of Python in this case is undefined. :-)</p>
+</blockquote>
+<p>In the following example you see that even though both objects represent the same number, they're actually to difference instances:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">257</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">257</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">4537070032</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="mi">4537070064</span>
+</pre></div>
+
+
+<h2 id="the-is-operator">The <code>is</code> operator<a class="headerlink" href="#the-is-operator" title="Permanent link">&para;</a></h2>
+<p>We have an entire chapter discussing operators, but it's important to discuss the <code>is</code> operator early, as it is a usual source of confusion. The <code>is</code> operator, applied in the form <code>obj1 is obj2</code>, checks if <code>obj1</code> and <code>obj2</code> are <strong>the same object</strong>. It's equivalent to <code>id(obj1) == id(obj2)</code>. Which, given the previously discussed "implementation specific" behavior of object interning, might throw "unexpected" results:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="kc">True</span>
+<span class="c1"># The following line might result surprising for new Pythoners:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">257</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">257</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="kc">False</span>
+</pre></div>
+
+
+<p>In reality, this is completely expected behavior. The correct operator to use to check equality is <code>==</code>. As a rule of thumb, try to avoid the <code>is</code> operator. There could be an exception for explicit boolean checks (<code>x is True</code>), but that'd mean that you want to check that <code>x</code> is literally <code>True</code>, when in reality the desire is to check if <code>x</code> is <em>truthy</em>. More about all of this in the Data Types and Operators chapters.</p>
+<h2 id="python-bytecode">Python Bytecode<a class="headerlink" href="#python-bytecode" title="Permanent link">&para;</a></h2>
+<p>Similarly to Java, Python will transform your source code into bytecode (an intermediary step) before actually running it. The process of running <code>python main.py</code> is roughly:</p>
+<ul>
+<li>The interpreter will load the <code>main.py</code> script and generate the intermediate <em>bytecode</em></li>
+<li>The Python runtime (also called virtual machine) will now run the generated <em>bytecode</em>.</li>
+</ul>
+<p>There are two main advantages of the bytecode format. First, Python can optimize the bytecode without requiring you to make changes to your scripts (see the <a href="https://github.com/python/cpython/blob/e682b26a6bc6d3db1a44d82db09d26224e82ccb5/Python/peephole.c">peephole optimizer</a>).</p>
+<p>Secondly, the bytecode generated can be cached as long as modules are not modified. Python stores cached bytecode in files with the extension <code>*.pyc</code>. Starting with Python 3.2 (see <a href="https://www.python.org/dev/peps/pep-3147/">PEP 3147</a>), all bytecode cached files are located in a special directory <code>__pycache__</code>. Back when we were using Python 2, these files would be at the same location as the actual Python module and it was very annoying. If you don't want Python to generate these cached bytecode files, pass the <code>-B</code> flag to the interpreter or set the <code>PYTHONDONTWRITEBYTECODE</code> to anything, although this is not recommended (caching is good).</p>
+<p>The <a href="https://docs.python.org/3/library/dis.html"><code>dis</code> module</a> includes functions for working with Python bytecode by disassembling it into a more human-readable form. For example, let's disassemble the statement <code>x += 1</code>:</p>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+
+<p>If you put that in a module (<code>my_dis_module.py</code>) and run dis from the command line <code>python -m dis my_dis_module.py</code>, we'll get:</p>
+<div class="codehilite"><pre><span></span>  <span class="mi">1</span>           <span class="mi">0</span> <span class="n">LOAD_CONST</span>               <span class="mi">0</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+              <span class="mi">2</span> <span class="n">STORE_NAME</span>               <span class="mi">0</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+  <span class="mi">2</span>           <span class="mi">4</span> <span class="n">LOAD_NAME</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+              <span class="mi">6</span> <span class="n">LOAD_CONST</span>               <span class="mi">1</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+              <span class="mi">8</span> <span class="n">INPLACE_ADD</span>
+             <span class="mi">10</span> <span class="n">STORE_NAME</span>               <span class="mi">0</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+             <span class="mi">12</span> <span class="n">LOAD_CONST</span>               <span class="mi">2</span> <span class="p">(</span><span class="k">None</span><span class="p">)</span>
+             <span class="mi">14</span> <span class="n">RETURN_VALUE</span>
+</pre></div>
+
+
+<p>In the first chunk corresponds to <code>x = 0</code>. The CPython interpreter is stack based, which means that the values/constants are allocated first. It follows then by referencing the variable <code>x</code> to that previously stored value. The second chunk shows the operation <code>INPLACE_ADD</code>, which is the bytecode operation generated by the <code>+=</code> operator.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../meta/" title="2. Meta" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                2. Meta
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../control_flow/" title="4. Control Flow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                4. Control Flow
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8e03edeb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
