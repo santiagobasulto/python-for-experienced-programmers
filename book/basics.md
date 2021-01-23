@@ -1,6 +1,6 @@
 # Language Basics
 
-There's not much you need to know about Python basics to get started, aside from:
+Python is a very intuitive language. Let's do a quick summary of all the basics to get you started.
 
 ## Indentation
 
@@ -86,7 +86,7 @@ name = "String"
 email = 'hello@example.com'
 ```
 
-!!! Note:
+!!! note
     There's no difference between single and double quoted strings. See the chapter about strings for more.
 
 Variable names don't have a length restriction. Valid characters are uppercase and lowercase letters (`A-Z`, `a-z`), digits (`0-9`), and the underscore character (`_`). Although digits can't be at the start of the variable name: `99name` is invalid and `_99name` is valid.
@@ -111,6 +111,10 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'x' is not defined
 ```
+
+### Variable Unpacking
+
+Whenever you
 
 ## Object identity
 

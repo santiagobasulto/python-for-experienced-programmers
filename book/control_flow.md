@@ -2,7 +2,7 @@
 
 Python won't give you any unpleasant surprises when it comes to Control Flow. On the contrary, you might find a few interesting features that are not part of other traditional dynamic languages.
 
-Personally, the feature that I miss the most in Python is the lack of "expression oriented control flow", as you can find for example in Scala or F#.
+Personally, the feature that I miss the most in Python is the lack of "expression oriented control flow", as you can find in Scala or F#.
 
 ## Indentation
 
@@ -45,7 +45,7 @@ x = int(input("Enter a number: "))
 even_or_odd = "even" if (x % 2 == 0) else "odd"
 ```
 
-A more _"Pythoninc"_ approach would use an explicit if statement:
+A more _"Pythonic"_ approach would use an explicit if statement:
 
 ```python
 x = int(input("Enter a number: "))
@@ -59,7 +59,10 @@ The ternary operator can be chained for even less readable operations, so please
 
 ```python
 def teenager_test(age):
-    return "drive and drink" if age >= 21 else "only drive" if age >= 18 else "Nothing fun"
+    return (
+        "drive and drink" if age >= 21 else "only drive"
+                          if age >= 18 else "Nothing fun"
+    )
 ```
 
 ### Truthy, Falsy
@@ -89,11 +92,13 @@ Empty collections are falsy. So we can just rewrite it in this way:
 ```python
 if a_list:
 ```
-> Hint: Remember the issue with the `is` operator. And just use it whenever you want to explicitly check for it.
+
+!!! tip
+    Remember the issue with the `is` operator. Try to avoid it as much as possible, and only use it whenever you want to explicitly check the _same_ object.
 
 ## For loops
 
-For loops in Python are **NOT** like for loops in other languages. They're what in other languages are called "for each" loops. They let you step over elements from an iterator. Example:
+For loops in Python are **NOT** like for loops in other languages. They're what, in other languages, are called "for each" loops. They let you step over elements from an iterator. Example:
 
 ```python
 fruits = ['Apple', 'Orange', 'Banana']
@@ -174,7 +179,7 @@ This might also result in some unpleasant surprises, like in this example inspir
 
 ### List Comprehensions
 
-The last statement of our previous example is a list comprehension: `[f() for f in lst]`. There's more about list comprehensions in the *Functional programming* chapter, but in a glance, this is what you need to know:
+The last statement of our previous example is a list comprehension: `[f() for f in lst]`. There's more about list comprehensions in the *Functional programming* chapter, but at a glance, this is what you need to know:
 
 A list comprehension works with any iterable, not just lists (should we call it *iterator comprehension*?). It has the following form `[(expression) for (element) in (iterable)]`. Optionally, it can be passed a "filtering" expression at the end. The final result then is: `[(expression) for (element) in (iterable) if (condition)]`. Examples will speak by themselves:
 
@@ -198,7 +203,8 @@ Our previous example involving weird scoping of variables can be rewritten using
 [3, 3, 3, 3]
 ```
 
-> **Hint**: Always prefer list comprehensions over for loops when possible. List comprehensions are expressive and declarative, compared to for loops which are imperative.
+!!! tip "Comprehensions are good"
+    Always prefer list comprehensions over for loops when possible. List comprehensions are expressive and declarative, compared to for loops which are imperative.
 
 ### `break` and `continue`
 

@@ -1,5 +1,5 @@
 1. Introduction
-2. Meta Python: A quick overview of governance and community
+2. Meta Python: A quick overview of governance and community ✅
    - History & important people
    - Python Versions
    - Features of the language
@@ -71,8 +71,9 @@
    - `__dict__`, `__bases__`
    - Method resolution order
 19. Modules and packaging
+    1.  PyPi, dependencies
 20. Testing in Python
-22. Testing
+21. Testing
    - PyTest
    - Others less used (nose)
 17. Object Oriented Programming (Basics)

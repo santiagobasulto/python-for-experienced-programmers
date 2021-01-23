@@ -1,6 +1,6 @@
-# Introduction
+# Python for experienced programmers
 
-I consider myself an experienced developer (I've been coding for more than 10 years). This book is what I'd like to read if I was interested in learning Python today. The problem with most books is that they're geared towards beginners: they don't explain Python. They teach people how to code **using Python**, which is a completely different deal.
+I consider myself an experienced developer (I've been coding for more than 10 years). This book is what I'd like to read if I was interested in learning Python today. The problem with most books is that they're geared towards beginners: they rarely focus on Python (its dev environment, its best practices, shortcomings, etc). They teach people **how to code using Python**, which is a completely different deal.
 
 In this book, I assume you know how to code, you know different paradigms, and more importantly, you know how to Google. You're a capable developer trying to get up to speed with Python, this should be as concise as possible. This book is not linear.
 

@@ -10,8 +10,9 @@ nav:
     - "1. Introduction": 'index.md'
     - "2. Meta": 'meta.md'
     - "3. Language Basics": 'basics.md'
-    - "4. Data Types": 'data-types.md'
-    - "5. Magic Methods": 'magic_methods.md'
+    - "4. Control Flow": 'control_flow.md'
+    - "5. Data Types": 'data-types.md'
+    - "6. Magic Methods": 'magic_methods.md'
 
 extra_css:
     - static/css/extra.css

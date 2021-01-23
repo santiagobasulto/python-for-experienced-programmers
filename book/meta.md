@@ -1,6 +1,6 @@
 # Python Language - Meta Guide
 
-All those tiny details that will eventually come up at a meetup and you need to look like you know your s#$t.
+Knowing a language is more than knowing how to write a for-loop or spawn a thread. A language has an associated community, governance and even a political view. The syntax of the language is just the tip of the iceberg.
 
 ## History
 The [Wikipedia article](https://en.wikipedia.org/wiki/History_of_Python) is very good. But this is what you need to know:
@@ -21,7 +21,7 @@ There's more to read about the history of Python. Guido has a few blogs in which
 
 ## Python versions
 
-As mentioned in the previous section, Python is an old language. Today's most popular uses of Python are Web Development and Data Science. That didn't even exist at the moment Python was created, back in the 90s. Python has obviously evolved to accommodate to today's needs, and with that evolution came different versions.
+As mentioned in the previous section, Python is an old language. Today's most popular uses of Python are _Web Development_ and _Data Science_, which not even remotely exist at the moment Python was created, back in the 90s. Python has obviously evolved to accommodate to today's needs, and with that evolution came different versions.
 
 Realistically, you only need to know that there are (were?) two major versions:  **Python 2 and Python 3**. Python 2 was the standard version when Python became "popular", I particularly started with Python 2.6 (back in 2008).
 
@@ -33,86 +33,93 @@ But Python 2 was released in the year 2000, the standard CPU was the Pentium III
 !!! tip
     Python 2 **is deprecated** and Python 3 is the version you should be using. More about this in the installation and setup section.
 
-So Python 3 was born. It was actually conceived as Python 3000 or Py3K (I'm not kidding you, terrible names). The discussions about Python 3 started in the year 2006 with [PEP 3000]([PEP 3000 -- Python 3000 | Python.org](https://www.python.org/dev/peps/pep-3000/)) (I'll explain what PEPs are later). Python 3 was again a major redesign of the language, and more importantly, **it was NOT backwards compatible with Python 2**, which didn't appeal to many people. Many important changes were introduced in Python 3, like default unicode support ([PEP 3120]([PEP 3120 -- Using UTF-8 as the default source encoding | Python.org](https://www.python.org/dev/peps/pep-3120/))), print as a function, and others.
+So Python 3 was born. It was actually conceived as Python 3000 or Py3K (I'm not kidding you, terrible names). The discussions about Python 3 started in the year 2006 with [PEP 3000]([PEP 3000 -- Python 3000 | Python.org](https://www.python.org/dev/peps/pep-3000/)) (I'll explain what PEPs are later). Python 3 was again a major redesign of the language, and more importantly, **it was NOT backwards compatible with Python 2**, which didn't appeal to too many people. Many important changes were introduced in Python 3, like default unicode support ([PEP 3120]([PEP 3120 -- Using UTF-8 as the default source encoding | Python.org](https://www.python.org/dev/peps/pep-3120/))), print as a function, and others.
 
-Python 3 was developed in parallel with Python 2 regular feature improvements, bugfixes and security patches. The core Python team knew Python 3 was the future and the better option, but it took time for the community to embrace it.
+Python 3 was developed in parallel with Python 2's regular feature improvements, bugfixes and security patches. The core Python team knew Python 3 was the future and the better option, but it took time for the community to embrace it.
 
-The result was that for a few years (between 2012-2018 I’d say), there were two incompatible languages being developed at the same time and it was chaotic. Libraries writers had to employ different tricks to make their packages compatible with both Py2 and Py3, and the community was divided.
+The result was that for a few years (between 2012-2018 I'd say), there were two incompatible languages being developed at the same time and it was chaotic. Library writers had to employ different tricks to make their packages compatible with both Py2 and Py3, and the community was divided.
 
 With time, everybody understood that Python 3 was superior, and adoption increased rapidly.
 
 **Python 2 was [deprecated on January 1st, 2020](https://www.python.org/doc/sunset-python-2/). Python 3 is the only supported version**.
 
 ## Features of the language
-Python supports all modern paradigms: imperative, Object Oriented (multiple inheritance) and functional (althought it’s not purely functional). Python is interpreted, which means that most of the time, your programs will work across multiple platforms.
+Python supports all modern paradigms: imperative, Object Oriented (with multiple inheritance) and functional (although it's not purely functional). Python is **interpreted**, which means that, most of the time, your programs will work across multiple platforms.
 
-Python is dynamically typed, and has an acceptable type system. Python is also considered “strongly typed”, which is hard to define, but basically you won’t have strange behaviors like the ones in JavaScript or PHP (`“10” + 10` results in an error for example). There are very few implicit type conversions done by the interpreter.
+Python is **dynamically typed**, and has an acceptable type system. Python is also considered _"strongly typed"_, which is hard to define, but basically means you won't have strange behaviors like the ones in JavaScript or PHP (`"10" + 10` results in an error, for example). There are very few implicit type conversions done by the interpreter.
 
-In Python, everything is an object, and this is correctly implemented. The advantage is that all objects will support overwriting methods, and we can even extend built-in types.
+In Python, **everything is an object** and, unlike Java, this is correctly (and consistently) implemented. The advantage is that, as every value is an object, we'll be able to overwrite methods, which will provide good extensibility. The "everything is an object" feature does increase memory footprint, as for example, what is a single `int` in any other language, ends up being a full object in Python's interpreter.
 
-This means that in Python, functions are [“first class objects”](https://en.wikipedia.org/wiki/First-class_function) (everything is an object after all) and that allows us to have that “functional” flavor with Python:
+Functions in Python are ["first class objects"](https://en.wikipedia.org/wiki/First-class_function) (everything is an object after all) and that empowers that _"functional"_ flavor in Python:
 
 ```python
 >>> map(lambda x: x**2, [1, 2, 3, 4]
 >>> [1, 4, 9, 16]
 ```
 
-Functional programming in Python is not pure. It’s easy to introduce side effects and most collections are mutable. Functional programming in Python feels more like a “style”, than an enforced paradigm. In latter chapters we’ll see a few features, like Haskell inspired List Comprehensions, that feel more “functional”.
+Functional programming in Python is not pure. It's easy to introduce side effects and most collections are mutable. It feels more like a "style", than an enforced paradigm. In latter chapters we'll see a few features, like Haskell inspired List Comprehensions, that feel more "functional".
 
 Related to OOP, there are two important concepts that I want to point out and might be worth taking a look right now: Duck Typing and Mixins. Skip to the OOP chapter to read more about them.
 
 ### Garbage Collection
 
-Python’s GC works by reference counting. The interpreter keeps a count of how many references exist to an object, and when that count reaches 0, the memory used by that object is freed. This is an example:
+Python's GC works by [reference counting](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)#Reference_counting). The interpreter keeps a count of how many references exist to an object and, when that count reaches 0, the memory used by that object is freed. This is an example:
 
 ```python
-# memory allocated for object 1
-x = 1
-# memory allocated for object 3
-x = 3
+# memory allocated for object with val 1
+x = MyObject(val=1)
+# memory allocated for object with val 3
+x = MyObject(val=3)
 
 # at this point, the interpreter knows that there are
-# no more references to 1, and it can free up the memory
+# no more references to the object with value 1,
+# and it can free up the memory
 ```
 
-Reference counting has advantages and disadvantages. To start with the good side, the main advantage of reference counting is its simplicity. At the beginning of the history of Python, when contributions were greatly needed, many programmers were able to contribute to Python because of the simplicity of its interpreter. People attribute the popularization of Python to how simple it was to modify the interpreter and create C extensions.
+Reference counting has advantages and disadvantages. To start with the good side, the main advantage of reference counting is its simplicity. At the beginning of the history of Python, when contributions were greatly needed, many programmers were able to start contributing to Python because of the simplicity of its interpreter. People attribute the popularization of Python to how simple it was to modify the interpreter and create C extensions.
 
-The disadvantages are twofold. First, reference counting is a GC algorithm considered “naive” and it can result in memory leaks or reference cycles more often than other more advanced (and modern) methods like “reference graphs”. And secondly, these reference counts are maintained in shared memory space within the process, which can be accessed and modified by any running thread. This could potentially result in race conditions, if it wasn’t by the introduction of the Python GIL, a global interpreter lock that basically prevents multiple threads to run at the same time. Yes, you read correctly, in Python, threads can’t run in parallel. More about this in the Concurrency chapter.
+The disadvantages are twofold. First, reference counting is a GC algorithm considered "naive" and it can result in memory leaks or reference cycles more often than other more advanced (and modern) methods like "reference graphs" or tracing. And secondly, these reference counts are maintained in shared memory space within the process, which can be accessed and modified by any running thread. This could potentially result in race conditions, something that was resolved by the introduction of the Python GIL, a global interpreter lock that basically prevents multiple threads to run at the same time. Yes, you read correctly, in Python, threads can't run in parallel. More about this in the Concurrency chapter.
 
 ### Type Hints
 
-Starting with Python 3.5, there’s support for “Type Hints”, which might **look like static typing, but it is NOT.** Type hints are just a visual clue for the programmer, editors and some other tools. Here’s an example:
+Starting with Python 3.5, there's support for "Type Hints", which might **look like static typing, but it is NOT.** Type hints are just a visual clue for programmers, editors and some other tools. Here's an example:
 
 ```python
 def greeting(name: str) -> str:
     return 'Hello ' + name
 ```
 
-If you’re interested in learning more about Type Hints, check out the [mypy](http://mypy-lang.org) project, which implements “optional static typing”.
+If you're interested in learning more about Type Hints, check out the [mypy](http://mypy-lang.org) project, which implements "optional static typing".
 
 ## Python, the language
 
-This is the fine print: “Python” is just a specification, it’s not an interpreter or a set of tools. It’s just the specification of how the language should work, and interpreters must implement that.
+This is the fine print: "Python" is just a specification, it's not an interpreter or a set of tools. It's just the specification of how the language should work, and interpreters must implement that.
 
-Think about it like XML. It’s just a specification. There are libraries built on top of that spec that will let you parse XML docs.
+Think about it like XML: it's just a specification. There are libraries built on top of that spec that will let you parse XML documents.
 
-This is usually confusing because Python is generally understood as Python the spec and **CPython**, the most widely used interpreter. They’re definitively related, and it’s hard to separate them. But as we’ll see next, there are several *python interpreters* that implement that specification and make it “usable”.
+This is confusing because generally we refer as Python to **CPython**, the most widely used interpreter. When someone tells you "download Python", they're actually telling you to download the CPython interpreter, what in python.org is referred to as the "traditional interpreter". But as we'll see in the next section, there are several interpreters implementing _Python_, the language.
 
-Some folks have taken the idea of the “specification” and extended it, the most notable example is [RPython (or restrictive Python)](https://rpython.readthedocs.io/en/latest/index.html), which is a spec for a subset of Python that another interpreter uses (PyPy).
+Some folks have taken the idea of the "specification" and extended it, the most notable example is [RPython (or restrictive Python)](https://rpython.readthedocs.io/en/latest/index.html), which is a spec for a subset of Python that another interpreter uses (PyPy).
 
 ## Python interpreters
 
-CPython is the most widely used interpreter. It’s what you get if you go to [python.org](https://python.org) and “Download Python”. But remember, it’s just 1 “implementation” of Python “the language specification”.
+CPython is the most widely used interpreter. It's what you get if you go to [python.org](https://python.org) and "Download Python". But remember, it's just 1 _"implementation"_ of Python, the language _specification_.
 
-The other interpreter worth mentioning is [PyPy](https://pypy.org). PyPy is a lot faster than CPython, it doesn’t suffer from the problem of the GIL and it has a Just in Time compiler. PyPy is based on RPython, which means that there are restrictions to the code you can write (specially dynamic features like defining classes within functions, etc), but the main issue with PyPy is that the support for CPython C extensions is limited.
+The other interpreter worth mentioning is [PyPy](https://pypy.org). PyPy is a lot faster than CPython, it doesn't suffer from the problem of the GIL and it has a Just in Time compiler. PyPy is based on RPython, which means that there are restrictions to the code you can write (specially dynamic features like defining classes within functions, etc), but the main issue with PyPy is that the support for CPython C extensions is limited.
 
-It might be worth mentioning now that it’s possible to write extensions for Python in C. This allows for improved performance and accessing other C libraries and function calls. A good example is the PostgreSQL library [psycopg2](https://github.com/psycopg/psycopg2/). C extensions are everywhere in the Python ecosystem, and that’s probably the major drawback for PyPy.
+It might be worth mentioning now that it's possible to write extensions for Python in C. This allows for improved performance and accessing other C libraries and function calls. A good example is the PostgreSQL library [psycopg2](https://github.com/psycopg/psycopg2/). C extensions are everywhere in the Python ecosystem, and that's probably the major drawback for PyPy.
 
-There are other interpreters that you might want to check out, although they’re less relevant: Jython, Iron Python, MicroPython, Stackless Python. A very promising project that might be worth your time is [Cython](https://cython.org).
+There are other interpreters that you might want to check out, although they're less popular:
+* [Jython](https://www.jython.org/): Python implemented using Java. Basically means writing Python and accessing the whole java library ecosystem.
+* [Iron Python](https://ironpython.net/): Python on top of the .NET Framework.
+* [Stackless Python](https://github.com/stackless-dev/stackless/wiki)
+* [MicroPython](https://micropython.org/): Python for microcontrollers.
+
+In this crossover of specifications, compilers, subsets and supersets of Python, there are some very interesting projects. For example: [Cython](https://cython.org), a superset/interpreter/new-language that simplifies writing C extensions, with optional static typing support.
 
 ## What does it mean to be Pythonic®?
 
-If you open a Python interpreter and type `import this`, you’ll see the [Zen of Python](https://www.python.org/dev/peps/pep-0020/):
+If you open a Python interpreter and type `import this`, you'll see the [Zen of Python](https://www.python.org/dev/peps/pep-0020/):
 
 ```
 Beautiful is better than ugly.
@@ -136,50 +143,48 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 ```
 
-The Zen of Python was written by [Tim Peters](https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)) (yes, the one from the Timsort algorithm) to provide a few “guidelines” for Python programmers.
+The Zen of Python was written by [Tim Peters](https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)) (yes, the one from the [Timsort algorithm](https://en.wikipedia.org/wiki/Timsort)) to provide a few "guidelines" for Python programmers.
 
-Regardless of what **you** think about these guidelines (I particularly love them, and I think they’re very good advice, specially “Explicit > Implicit” and namespaces), you can already see that **Python is an opinionated language**. It’s not that Guido just wrote the language, the interpreter and let it be, but there’s also a “soft” recommendation of how to write “proper” Python code.
+Regardless of what **you** think about these guidelines (I particularly love them, and I think they're very good advice, specially "Explicit > Implicit" and namespaces), you can already see that **Python is an opinionated language**. It's not that Guido just wrote the language, the interpreter and let it be, but there's also a "soft" recommendation of how to write "proper" Python code.
 
-I don’t think there’s any “official” description of how to write _Pythonic_ code. It’s more like a tacit agreement between Pythoners: write concise and clear code, and think about maintainability. Favor immutability as much as possible, try to use all the features of the language, etc.
+I don't think there's any "official" description of how to write _Pythonic_ code. It's more like a tacit agreement between Pythoners: write concise and clear code, and think about maintainability. Favor immutability as much as possible, try to use all the features of the language, etc.
 
 I think an example will express the philosophy behind _Pythonic_ code in a better way. Suppose you have a list of tuples and you want to transform them into a dictionary (a mapping, key->value type). The un-Pythonic version would be:
 
 ```python
-list_of_tuples = [(‘rose’, 32), (‘john’, 25)]
+list_of_tuples = [(‘rose', 32), (‘john', 25)]
 user_age = {}
 for i in range(len(list_of_tuples)):
     element = list_of_tuples[i]
     user_age[element[0]] = element[1]
 ```
 
-This code has a few issues. First, stylistically speaking, we’re manually indexing the list to get the element at the _ith_ position. We’re also manually indexing the tuple. This can all be improved with the use of iteration and tuple unpacking:
+This code has a few issues. First, stylistically speaking, we're manually indexing the list to get the element at the _ith_ position. We're also manually indexing the tuple. This can all be improved with the use of iteration and tuple unpacking:
 
 ```python
-list_of_tuples = [(‘rose’, 32), (‘john’, 25)]
+list_of_tuples = [(‘rose', 32), (‘john', 25)]
 user_age = {}
 for name, age in list_of_tuples:
     user_age[name] = age
 ```
 
-Just by relying on these 2 features of the language we got code that is more concise and clear. We still have the issue of “mutability”, which can be resolved with another feature of the language which is a _dict comprehension_:
+Just by relying on these 2 features of the language we got code that is more concise and clear. We still have the issue of "mutability", which can be resolved with another feature of the language which is a _dict comprehension_:
 
 ```python
-list_of_tuples = [(‘rose’, 32), (‘john’, 25)]
+list_of_tuples = [(‘rose', 32), (‘john', 25)]
 user_age = {
 	name: age
 	for (name, age) in list_of_tuples
 }
 ```
 
-This is now just 2 lines of code (I broke it in several lines for readability) and it’s atomic.
+The final result is just 2 lines of code, expressive, declarative (and readable), and it's atomic.
 
-All the examples above are equivalent, and they generate the same result, but the last one is the safest, clearest and most concise.
-
-There’s another advantage to writing _Pythonic_ code, which is consistency among Python projects. It feels very good to join a new project, with a new set of coworkers, and everybody follows the same style.
+There's another advantage to writing _Pythonic_ code, which is consistency among Python projects. It feels very good to join a new project, with a new set of coworkers, and everybody follows the same style.
 
 ## Code formatting
 
-I won’t provide many details here because we’ll see the specific tools in the tooling section, but I’ll say that Python has resolved the issue of different formatting among projects. There’s an “official” code formatter, [black](https://github.com/psf/black) created and maintained by the PSF (see next section), which is the “standard” in Python. It’s very opinionated, and **nobody agrees with it 100%**, but we prefer conciseness among Python codebases than individual whims about single quotes or double quotes.
+I won't provide many details here because we'll see the specific tools in the tooling section, but I'll say that Python has resolved the issue of different formatting among projects. There's an "official" code formatter, [black](https://github.com/psf/black) created and maintained by the PSF (see next section), which is the "standard" in Python. It's very opinionated, and **nobody agrees with it 100%**, but we prefer conciseness among Python codebases than individual whims about single quotes or double quotes.
 
 With black, there are no discussions that are common in other languages, like where to place the braces in Java.
 
@@ -195,22 +200,22 @@ Strictly speaking, the PSF is not in charge of the actual development of CPython
 
 ## Communities and conferences
 
-Python has a highly cohesive ecosystem. Every Pythoneer knows each other and the communities are generally very friendly. There’s a a major conference happening every year in the USA, which is PyCon US. Each country then organizes its own PyCon (full list available [here](https://pycon.org)). There are other “local” conferences, for example [PyCascades](https://2020.pycascades.com/the-conference/). These conferences and meetups are organized by different “Python user groups” in particular cities or areas. For example, [ChiPy](https://www.chipy.org)  in Chicago or [BayPiggies](http://www.baypiggies.net) in San Francisco.
+Python has a highly cohesive ecosystem. Every Pythoneer knows each other and the communities are generally very friendly. There's a a major conference happening every year in the USA, which is PyCon US. Each country then organizes its own PyCon (full list available [here](https://pycon.org)). There are other "local" conferences, for example [PyCascades](https://2020.pycascades.com/the-conference/). These conferences and meetups are organized by different "Python user groups" in particular cities or areas. For example, [ChiPy](https://www.chipy.org)  in Chicago or [BayPiggies](http://www.baypiggies.net) in San Francisco.
 
-The fact that we have such a cohesive community is sometimes detrimental, as it’s a very “personalistic” community. There are a few well recognized people that you’ll see pushing all the major projects and approvals. But that is generally fine, the people involved is amazing.
+The fact that we have such a cohesive community is sometimes detrimental, as it's a very "personalistic" community. There are a few well recognized people that you'll see pushing all the major projects and approvals. But that is generally fine, the people involved is amazing.
 
 ## Politics and philosophy
 
-Nobody likes to talk about politics. But it exists, and if you want to get involved with Python, you better have an idea of how it all works. I’ve participated in many communities, and understanding what’s the collective view of the people involved helps you communicate with them.
+Nobody likes to talk about politics. But they exist, and if you want to get involved with Python, you better have an idea of how it all works. I've participated in many communities and understanding what's the collective view of the people involved helps you communicate with them.
 
 !! Note:
-	This is MY view of Python’s politics and philosophy, to which I subscribe. There is no substantial proof aside from my own experience. If you have a different opinion please open an issue and we can discuss it.
+	This is MY view of Python's politics and philosophy, to which I subscribe. There is no substantial proof aside from my own experience. If you have a different opinion please open an issue and we can discuss it.
 
-Python, as much of the open source community, belongs to the left-wing of politics. We could say that Python is Social Democratic, in US political terms. There’s no recognition of “classes” or families: it doesn’t matter if someone is rich or not, actually it doesn’t even come up.
+Python, as much of the open source community, belongs to the left-wing of politics. In the US political spectrum, we could say that Python is _Social Democratic_. There's no recognition of "classes" or families: it doesn't matter if someone is rich or not, actually it doesn't even come up.
 
-There’s a big sense of “social justice” too, the community tries to help less favored groups and support minorities. For example: there has been an amazing progress in the past decade to encourage women to join the community by providing safe environments for their development. [PyLadies](https://www.pyladies.com) or [DjangoGirls](https://djangogirls.org) are the good examples.
+There's a big sense of "social justice" too, the community tries to help less favored groups and support minorities. For example: there has been an amazing progress in the past decade to encourage women to join the community by providing safe environments for their development. [PyLadies](https://www.pyladies.com) or [DjangoGirls](https://djangogirls.org) are good examples.
 
-Generally speaking, and as a summary, the Python community is very friendly and comforting. Feel free to reach out to any of the contact options (shown below) and get started.
+Generally speaking and, as a summary, the Python community is very friendly and comforting. Feel free to reach out to any of the contact options (shown below) and get started.
 
 ## PEPs: Python Enhancement Proposals
 
@@ -218,10 +223,11 @@ PEPs are documents created by the community to propose new features or changes t
 
 Read more about PEPs and the process in [PEP 1](https://www.python.org/dev/peps/pep-0001/).
 
-## How to get in touch with other Pythoners
+## Python communities
 
-Aside from the conferences and user groups mentioned before, there are a few online alternatives:
+Aside from the conferences and user groups mentioned above, there are a few online alternatives:
 
 * Python user mailing list: https://mail.python.org/mailman/listinfo/python-list
 * Reddit community: https://reddit.com/r/Python
 * Reddit Learn Python: https://reddit.com/r/learnpython
+* Python Discord: https://discord.com/invite/python
